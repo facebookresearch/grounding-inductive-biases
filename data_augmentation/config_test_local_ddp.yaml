@@ -1,0 +1,46 @@
+classifier:
+  seed: 0
+  data: ""
+  result_dir: ""
+  arch: resnet18
+  num_classes: 1000
+  # 4 * num GPUS
+  workers: 16
+  epochs: 150
+  start_epoch: 0
+  batch_size: 256
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.001
+  print_freq: 100
+  resume: ""
+  evaluate: False
+  pretrained: False
+  gpu: ???
+  augment: "None"
+  scale_exp: 0
+  ncopies: 4
+  training_ncopies: 1
+  aug_reg: 0.1
+  augerino: False
+  transfos: ["tx", "ty","scale"]
+  cropsize: 224
+  min_val: False
+  min_values: [1, 1,1]
+  shutdown_vals: [10,10,10]
+  modify: [False, False, False]
+  inv_per_class: False
+  disable_at_valid: False
+  # DistributedDataParallel
+  distributed: True
+  dist_backend: nccl
+  # populated automatically
+  world_size: null
+  rank: null
+  tvalues: [0.3,0.3]
+  pretrained_noaugment: False 
+  noaugment_path: ""
+  startwidth: [0.84,0.84,2.44]
+  onecopy: True
+  fixed_augerino: False
+  

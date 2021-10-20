@@ -1,0 +1,3 @@
+# @package _group_
+name: local
+logs_dir: outputs

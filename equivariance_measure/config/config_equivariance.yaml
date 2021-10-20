@@ -1,0 +1,23 @@
+module:
+  _target_: equivariance_measure.embedding_alignments.EmbeddingAlignmentModule
+  num_classes: 1000
+  pretrained: True
+  results_dir: ${results_dir}
+  data_stage: ${data_stage}
+  prefix: ""
+
+data_module:
+  _target_: equivariance_measure.data.ImageNetNoAugDataModule
+  data_dir: path_to_image_net
+  num_workers: 16
+  batch_size: 32
+
+name: equivariance_measure
+n_samples: 10000
+data_stage: train
+random_seed: 0
+results_dir: /checkpoint/${env:USER}/Real-Data-Equivariance/results/${name}
+
+hydra:
+  job:
+    name: ${name}

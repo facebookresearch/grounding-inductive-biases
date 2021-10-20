@@ -1,0 +1,2 @@
+logging_folder: logs_training
+checkpoint_path: logs_training/model.pth

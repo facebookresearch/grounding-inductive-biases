@@ -1,0 +1,19 @@
+sanity_checks:
+  similarity_type: "resnet18"
+  # max num of image pairs for analysis
+  max_n_image_pairs: 5
+  # max num of class label combinations for across class similarity
+  max_class_label_combinations: 5
+  # angles used for transformed similarity
+  small_angle: 5.0
+  large_angle: 90.0
+  # runs analysis only on specified labels for testing
+  run_on_sample_classes: True
+  sample_val_class_labels: [
+    "n04335435", # streetcar
+    "n04310018", # steam locomotive
+  ]
+  sample_train_class_labels: [
+    "n01443537",
+    "n02074367",
+]

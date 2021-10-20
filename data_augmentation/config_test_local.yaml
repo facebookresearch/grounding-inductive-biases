@@ -1,0 +1,16 @@
+classifier:
+  data: ""
+  result_dir: ""
+  job_id: ""
+  gpu: ???
+  seed: ???
+  distributed: True
+  dist_backend: nccl
+  # populated automatically
+  world_size: null
+  rank: null
+  augment_valid: "None"
+  augment_train: "None"
+  scale_mag: 0
+  no_aug_test: False
+  test_seeds: [0]

@@ -1,4 +1,11 @@
 """
+Copyright (c) Facebook, Inc. and its affiliates.
+All rights reserved.
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+"""
+
+"""
 Computes the similarity between transformed image_1 and image_2
 with the subpolicy transformations from AutoAugment's best ImageNet augmentation policies
 """

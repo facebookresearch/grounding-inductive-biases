@@ -1,3 +1,10 @@
+"""
+Copyright (c) Facebook, Inc. and its affiliates.
+All rights reserved.
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+"""
+
 from _pytest.fixtures import wrap_function_to_error_out_if_called_directly
 import pytest
 from wordnet_analysis import wordnet_correlation

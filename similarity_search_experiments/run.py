@@ -1,4 +1,11 @@
 """
+Copyright (c) Facebook, Inc. and its affiliates.
+All rights reserved.
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+"""
+
+"""
 Locally:
 python run.py -m launch_env=local hydra/launcher=submitit_local similarity_search.run_on_sample_classes=True \
     similarity_search.max_n_image_pairs=10 similarity_search.batch_size=4

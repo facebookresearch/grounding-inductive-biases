@@ -1,4 +1,11 @@
 """
+Copyright (c) Facebook, Inc. and its affiliates.
+All rights reserved.
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+"""
+
+"""
 Sanity checks similarity metric using ImageNet validation images
 
 1) across versus within class similarity: measure the difference in similarity between within- versus across- classes 

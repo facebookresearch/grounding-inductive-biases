@@ -1,0 +1,56 @@
+defaults:
+  - launch_env: cluster
+  - override hydra/launcher: submitit_slurm
+
+name: similarity_search_${similarity_search.similarity_type}
+
+similarity_search:
+  similarity_type: resnet18_no_aug
+  batch_size: 32
+  # max num of image pairs for analysis
+  max_n_image_pairs: 1000
+  # distribute computation on nodes parallelized by class labels
+  parallel_classes:
+    parallelize: False
+    num_partitions: 10
+    partition_index: 0
+  # runs analysis only on specified labels for testing
+  run_on_sample_classes: False
+  # if True, will run analysis both on subpolicies and single transformations
+  run_on_subpolicies: False
+  # use validation dataset (otherwise, uses training)
+  use_val: False
+  sample_val_class_labels: [
+    "n04335435", # streetcar
+    "n04310018", # steam locomotive
+    "n04228054", # ski
+    "n04120489", # running shoe
+    "n03995372", # power drill
+    "n03843555", # oil filter
+    "n03271574", # electric fan
+    "n03250847", # drumstick
+    "n03063599", # coffee mug
+    "n02992211", # cello
+  ]
+  sample_train_class_labels: [
+    "n01443537",
+    "n02074367",
+    "n02321529",
+    "n02808440",
+    "n03085013",
+    "n03662601", 
+    "n04023962", 
+    "n04399382", 
+    "n07720875",
+    "n01629819",
+]
+
+hydra:
+  job:
+    name: ${name}
+  launcher:
+    timeout_min: 1400
+  run:
+    dir: ${launch_env.logs_dir}/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${launch_env.logs_dir}/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}

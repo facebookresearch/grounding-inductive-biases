@@ -1,0 +1,23 @@
+"""
+Copyright (c) Facebook, Inc. and its affiliates.
+All rights reserved.
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+"""
+
+classifier:
+  data: ""
+  result_dir: ""
+  job_id: ""
+  gpu: ???
+  seed: ???
+  distributed: True
+  dist_backend: nccl
+  # populated automatically
+  world_size: null
+  rank: null
+  augment_valid: "None"
+  augment_train: "None"
+  scale_mag: 0
+  no_aug_test: False
+  test_seeds: [0]

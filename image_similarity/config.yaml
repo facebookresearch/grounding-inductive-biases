@@ -1,0 +1,42 @@
+defaults:
+  - hydra/launcher: submitit_slurm
+sanity_checks:
+  similarity_type: resnet18
+  # max num of image pairs for analysis
+  max_n_image_pairs: 5000
+  # max num of class label combinations for across class similarity
+  max_class_label_combinations: 1000
+  # angles used for transformed similarity
+  small_angle: 5.0
+  large_angle: 90.0
+  # runs analysis only on specified labels for testing
+  run_on_sample_classes: False
+  sample_val_class_labels: [
+    "n04335435", # streetcar
+    "n04310018", # steam locomotive
+    "n04228054", # ski
+    "n04120489", # running shoe
+    "n03995372", # power drill
+    "n03843555", # oil filter
+    "n03271574", # electric fan
+    "n03250847", # drumstick
+    "n03063599", # coffee mug
+    "n02992211", # cello
+  ]
+  sample_train_class_labels: [
+    "n01443537",
+    "n02074367",
+    "n02321529",
+    "n02808440",
+    "n03085013",
+    "n03662601", 
+    "n04023962", 
+    "n04399382", 
+    "n07720875",
+    "n01629819",
+]
+
+hydra: 
+  launcher: 
+    timeout_min: 900
+

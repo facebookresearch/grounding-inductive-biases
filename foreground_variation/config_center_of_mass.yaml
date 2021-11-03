@@ -1,0 +1,19 @@
+
+name: center_of_mass_variation
+
+center_of_mass:
+  max_samples: ${max_samples}
+  results_dir: null
+
+
+
+data_module:
+  _target_: foreground_variation.data.ImageNetForegroundModule
+  batch_size: 1
+  data_dir: null
+  num_workers: 8
+
+
+hydra:
+  job:
+    name: ${name}

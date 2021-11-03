@@ -1,0 +1,41 @@
+module:
+  _target_: per_class_augmentation.model.ResNet18Classifier
+  learning_rate: 1e-1
+  weight_decay: 1e-4
+  momentum: 0.9
+  num_classes: 1000
+
+data_module:
+  _target_: per_class_augmentation.data.ImageNetTopAugmentationModule
+  data_dir: imagenet_path
+  top_transforms_dir: /results/similarity-search
+  num_transforms: 25
+  # resnet18 or resnet18_no_aug similarity search
+  similarity_type: resnet18
+  plus_standard_aug: True
+  # apply standard augmetnations before Top transforms
+  standard_aug_before: True
+  top_per_class: True
+  # ranks top transforms by: avg_percent_similarity_change or proportion_boosted
+  top_transform_ranking: proportion_boosted
+  # distribution over top transforms
+  transform_prob: 
+    # distribution for prob: weighted_boost, uniform, fixed
+    dist: uniform
+    fixed_prob: 0.1
+  # minimum proportion boosted required for a transformation. If null, no filter is applied
+  min_prop_boosted_filter: 0.4
+  # removes top transforms with average percent change below threshold. If null, no filter is applied
+  min_perc_change_per_class_filter: 0.0
+  num_workers: 16
+
+name: per_class_augmentation_top_${data_module.num_transforms}_${data_module.similarity_type}
+# tags for tracking experiments
+tag: null
+random_seed: 0
+results_dir: null
+total_batch_size: 256
+
+hydra:
+  job:
+    name: ${name}

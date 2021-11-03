@@ -1,0 +1,6 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: submitit_local
+
+# run only on 100 samples for testing
+max_samples: 100

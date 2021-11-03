@@ -1,0 +1,5 @@
+# @package _global_
+trainer:
+  gpus: 1
+  max_epochs: 3
+  fast_dev_run: True

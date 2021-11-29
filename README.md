@@ -26,3 +26,7 @@ To test the model update the appropriate `result_dir` (folder where the trained 
 For remaining experiments: 
 
 Navigate to the corresponding directory, then execute: `python run.py -m` with the corresponding `config.yaml` file (which stores experiment configs).
+
+# License
+
+Consult License.md

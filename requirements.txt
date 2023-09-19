@@ -59,7 +59,6 @@ pathspec==0.8.1
 pathtools==0.1.2
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==8.1.0
 pip==20.3.3
 pluggy==0.13.1
 promise==2.3
